@@ -264,15 +264,21 @@ extension CaptureViewController: CaptureDelegate {
         }
         
         #if ANYIMAGEKIT_ENABLE_EDITOR
-        guard let image = UIImage(data: photoData) else { return }
-        var editorOptions = options.editorPhotoOptions
-        editorOptions.enableDebugLog = options.enableDebugLog
-        let controller = ImageEditorController(photo: image, options: editorOptions, delegate: self)
-        present(controller, animated: false) { [weak self] in
-            guard let self = self else { return }
-            self.toolView.captureButton.stopProcessing()
-            self.capture.stopRunning()
-            self.orientationUtil.stopRunning()
+        if options.editable {
+            guard let image = UIImage(data: photoData) else { return }
+            var editorOptions = options.editorPhotoOptions
+            editorOptions.enableDebugLog = options.enableDebugLog
+            let controller = ImageEditorController(photo: image, options: editorOptions, delegate: self)
+            present(controller, animated: false) { [weak self] in
+                guard let self = self else { return }
+                self.toolView.captureButton.stopProcessing()
+                self.capture.stopRunning()
+                self.orientationUtil.stopRunning()
+            }
+        } else {
+            if let url = FileHelper.write(photoData: photoData, utType: fileType.utType) {
+                delegate?.capture(self, didOutput: url, type: .photo)
+            }
         }
         #else
         if let url = FileHelper.write(photoData: photoData, utType: fileType.utType) {
@@ -307,14 +313,18 @@ extension CaptureViewController: RecorderDelegate {
         }
         
         #if ANYIMAGEKIT_ENABLE_EDITOR
-        var editorOptions = options.editorVideoOptions
-        editorOptions.enableDebugLog = options.enableDebugLog
-        let controller = ImageEditorController(video: url, placeholderImage: thumbnail, options: editorOptions, delegate: self)
-        present(controller, animated: false) { [weak self] in
-            guard let self = self else { return }
-            self.toolView.captureButton.stopProcessing()
-            self.capture.stopRunning()
-            self.orientationUtil.stopRunning()
+        if options.editable {
+            var editorOptions = options.editorVideoOptions
+            editorOptions.enableDebugLog = options.enableDebugLog
+            let controller = ImageEditorController(video: url, placeholderImage: thumbnail, options: editorOptions, delegate: self)
+            present(controller, animated: false) { [weak self] in
+                guard let self = self else { return }
+                self.toolView.captureButton.stopProcessing()
+                self.capture.stopRunning()
+                self.orientationUtil.stopRunning()
+            }
+        } else {
+            delegate?.capture(self, didOutput: url, type: .video)
         }
         #else
         delegate?.capture(self, didOutput: url, type: .video)

@@ -60,8 +60,8 @@ public struct CaptureOptionsInfo {
     public var enableDebugLog: Bool = false
     
     /// Enable editor
-    /// - Default: false
-    public var editable: Bool = false
+    /// - Default: true
+    public var editable: Bool = true
     
     #if ANYIMAGEKIT_ENABLE_EDITOR
     /// Editor photo options info, used for editor after take photo.

@@ -320,7 +320,7 @@ extension CaptureConfigViewController {
             case .videoMaximumDuration:
                 return "20"
             case .editable:
-                return "false"
+                return "true"
             }
         }
         

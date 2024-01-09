@@ -38,6 +38,7 @@
 "PreferredPositions" = "Posições Preferidas";
 "FlashMode" = "Modo do Flash";
 "VideoMaximumDuration" = "Duração Máxima do Vídeo";
+"Editable" = "Editável";
 
 // Other
 "Preselect Assets Tips" = "Se você quiser pré-selecionar itens quando o seletor for apresentado, você deve passar o identificador dos itens selecionados para o selecionador antes de apresentá-lo.";

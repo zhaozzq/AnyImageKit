@@ -248,6 +248,11 @@ extension CaptureConfigViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    private func allowUseEidtorTapped(_ indexPath: IndexPath) {
+        options.editable = !options.editable
+        (tableView.cellForRow(at: indexPath) as? ConfigCell)?.contentLabel.text = "\(options.editable)"
+    }
 }
 
 // MARK: - Enum
@@ -260,7 +265,8 @@ extension CaptureConfigViewController {
         case preferredPositions
         case flashMode
         case videoMaximumDuration
-        
+        case editable
+
         var title: String {
             switch self {
             case .mediaOptions:
@@ -275,6 +281,8 @@ extension CaptureConfigViewController {
                 return "FlashMode"
             case .videoMaximumDuration:
                 return "VideoMaximumDuration"
+            case .editable:
+                return "Editable"
             }
         }
         
@@ -292,6 +300,8 @@ extension CaptureConfigViewController {
                 return ".flashMode"
             case .videoMaximumDuration:
                 return ".videoMaximumDuration"
+            case .editable:
+                return ".editable"
             }
         }
         
@@ -309,6 +319,8 @@ extension CaptureConfigViewController {
                 return "Off"
             case .videoMaximumDuration:
                 return "20"
+            case .editable:
+                return "false"
             }
         }
         
@@ -327,6 +339,8 @@ extension CaptureConfigViewController {
                 return controller.flashModeTapped
             case .videoMaximumDuration:
                 return controller.videoMaximumDurationTapped
+            case .editable:
+                return controller.allowUseEidtorTapped
             }
         }
     }

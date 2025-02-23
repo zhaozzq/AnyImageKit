@@ -46,7 +46,7 @@
 
 ## 要求
 
-- iOS 12.0+
+- iOS 13.0+
 - Xcode 14.1+
 - Swift 5.7+
 
@@ -58,7 +58,7 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/AnyImageKit/AnyImageKit.git", .upToNextMajor(from: "0.15.1"))
+    .package(url: "https://github.com/AnyImageKit/AnyImageKit.git", .upToNextMajor(from: "0.18.2"))
 ]
 ```
 
@@ -128,7 +128,9 @@ extension ViewController: ImagePickerControllerDelegate {
 
 | Version | Release Date | Xcode | Swift | iOS |
 | ---- | ----  | ---- | ---- | ---- |
-| [v0.17.0](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0170) | 2023-10-18 | 15.0 | 5.9 | 12.0+ |
+| [v0.18.2](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0182) | 2025-02-18 | 16.0 | 5.10 | 13.0+ |
+| [v0.18.1](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0181) | 2024-10-09 | 16.0 | 5.10 | 13.0+ |
+| [v0.18.0](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0180) | 2024-10-08 | 16.0 | 5.10 | 12.0+ |
 
 
 <details>
@@ -136,6 +138,9 @@ extension ViewController: ImagePickerControllerDelegate {
 
 | 版本 | 发布时间 | Xcode | Swift | iOS |
 | ---- | ----  | ---- | ---- | ---- |
+| [v0.17.2](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0172) | 2024-01-24 | 15.2 | 5.9 | 12.0+ |
+| [v0.17.1](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0171) | 2024-01-12 | 15.2 | 5.9 | 12.0+ |
+| [v0.17.0](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0170) | 2023-10-18 | 15.0 | 5.9 | 12.0+ |
 | [v0.16.0](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0160) | 2023-05-09 | 14.3 | 5.8 | 12.0+ |
 | [v0.15.1](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0151) | 2022-12-15 | 14.1 | 5.7 | 12.0+ |
 | [v0.15.0](https://github.com/AnyImageKit/AnyImageKit/blob/master/Documentation/RELEASE_NOTE_CN.md#0150) | 2022-11-11 | 14.1 | 5.7 | 12.0+ |

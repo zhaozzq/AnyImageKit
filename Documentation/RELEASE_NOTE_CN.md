@@ -1,5 +1,43 @@
 # 更新日志
 
+## 0.18.2
+
+### 修复
+
+- Picker
+  - 尝试修复崩溃 ([#191](https://github.com/AnyImageKit/AnyImageKit/issues/191))
+- Editor
+  - 部分视频无法加载 ([#192](https://github.com/AnyImageKit/AnyImageKit/issues/192))
+
+## 0.18.1
+
+### 通用
+
+- 最低部署版本调整为 iOS 13.0
+- 支持 Kingfisher 8.0 版本。
+
+## 0.18.0
+
+### 修复
+
+- Picker
+  - 临时修复 Xcode 16 无法获取资源的问题（可能是系统的问题），目前 `albumOptions` （相册类型）配置会失效。([#190](https://github.com/AnyImageKit/AnyImageKit/issues/190))
+
+## 0.17.2
+
+### 修复
+
+- Picker
+  - 修复切换相册时闪退问题。
+
+## 0.17.1
+
+### 修复
+
+- Picker
+  - 修复 `preferredOutputPath` 未生效问题。([#187](https://github.com/AnyImageKit/AnyImageKit/pull/187))
+  - 修复 Picker 滚动时内存泄露问题。([#188](https://github.com/AnyImageKit/AnyImageKit/pull/188))
+
 ## 0.17.0
 
 ### 新增
@@ -86,6 +124,7 @@
 ### 修复
 
 - Picker
+
   - 修复拍照之后没有检查资源是否符合禁用规则就进行了选中。
   - 修复 `contentInsetAdjustmentBehavior` 被业务方全局替换后，视图出现偏移的问题。
 
@@ -275,7 +314,7 @@ Xcode 13 beta 无法编译错误。([#95](https://github.com/AnyImageKit/AnyImag
 ### 新增
 
 - Picker
-  - 适配 iOS 14  “Limited Photos Library” 模式
+  - 适配 iOS 14 “Limited Photos Library” 模式
 - Editor
   - 画笔在 iOS 14 中支持 `UIColorWell`。
 

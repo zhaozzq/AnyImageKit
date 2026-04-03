@@ -1,5 +1,26 @@
 # Release Notes
 
+## 0.18.6
+
+### Resolved
+
+- Picker
+  - Recreate data source on album switch to fix unresponsive cells.
+
+## 0.18.5
+
+### Resolved
+
+- Picker
+  - Fixed UICollectionViewCell crash with negative size.
+
+## 0.18.4
+
+### Resolved
+
+- Picker
+  - Fixed UI issues caused by album changes during preview.
+
 ## 0.18.2
 
 ### Resolved
